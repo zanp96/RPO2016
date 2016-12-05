@@ -12,7 +12,12 @@ glavnookno::glavnookno(QWidget *parent) :
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   connect(ui->actionUndo, SIGNAL(triggered()), this, SLOT(undo2()));
-  connect(ui->volume, SIGNAL(clicked()), this, SLOT(setMusic()));
+  /*QMediaPlaylist *p = new QMediaPlaylist();
+  p->addMedia(QUrl("qrc:/audio/audio/music.wav"));
+  p->addMedia(QUrl("qrc:/audio/audio/music1.wav"));
+  p->setPlaybackMode(QMediaPlaylist::Loop);
+  QMediaPlayer *pl = new QMediaPlayer();
+  connect(ui->volume, SIGNAL(clicked()), ui->volume, SLOT(setMusic(pl, p)));*/
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
@@ -116,9 +121,9 @@ void glavnookno::undo2(){
 
 void glavnookno::setMusic(QMediaPlayer *mp, QMediaPlaylist *m){
     //QPushButton *p = (QPushButton*)ui->volume;
-    QMessageBox *qmb = new QMessageBox();
-    QMessageBox *qmb1 = new QMessageBox();
-    QMessageBox *qmb2 = new QMessageBox();
+    //QMessageBox *qmb = new QMessageBox();
+    //QMessageBox *qmb1 = new QMessageBox();
+    //QMessageBox *qmb2 = new QMessageBox();
     //qmb->setText("NIČ!");
     //qmb1->setText("TO OFF!");
     //qmb2->setText("TO ON!");
